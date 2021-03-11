@@ -4,18 +4,7 @@
       <Logo />
       <h1 class="title">nuxt-express</h1>
       <div>
-        {{ test }}
-        <div class="links">
-          <a href="/users" class="button--green"> Users List </a>
-        </div>
-      </div>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" rel="noopener noreferrer" class="button--green">
-          Documentation
-        </a>
-        <a href="https://github.com/typicode/lowdb" target="_blank" rel="noopener noreferrer" class="button--grey">
-          LowDB
-        </a>
+        {{ status }}
       </div>
     </div>
   </div>
@@ -24,10 +13,10 @@
 <script>
 export default {
   async asyncData({ $http }) {
-    const test = await $http.$get('/api/test')
-    return {
-      test
-    }
+    const res = await $http.$get('/api/users/999')
+    // const res = await $http.$post('/api/users', { username: 'sergio', password: 'xxx' })
+    console.log('status: ', res.ok) // eslint-disable-line
+    return { status: res }
   }
 }
 </script>

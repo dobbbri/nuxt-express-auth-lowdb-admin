@@ -2,11 +2,11 @@
   <section class="container">
     <div>
       <Logo />
-      <h1 class="title">USERS</h1>
-      <ul class="users">
-        <li v-for="(user, index) in users" :key="index" class="user">
-          <nuxt-link :to="{ name: 'users-id', params: { id: index } }">
-            {{ user.name }}
+      <h1 class="title">Produtos</h1>
+      <ul class="products">
+        <li v-for="(product, index) in products" :key="index" class="product">
+          <nuxt-link :to="{ name: 'products-id', params: { id: product.id } }">
+            {{ product.name }}, {{ product.amount }}
           </nuxt-link>
         </li>
       </ul>
@@ -18,9 +18,10 @@
 <script>
 export default {
   async asyncData({ $http }) {
-    const data = await $http.$get('/api/users')
-    return { users: data }
+    const data = await $http.$get('/api/products')
+    return { products: data }
   },
+
   head() {
     return {
       title: 'Users'
@@ -41,12 +42,12 @@ export default {
 .title {
   margin: 30px 0;
 }
-.users {
+.products {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.user {
+.product {
   margin: 10px 0;
 }
 .button {

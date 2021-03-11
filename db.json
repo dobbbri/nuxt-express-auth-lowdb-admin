@@ -1,3 +1,13 @@
 {
+  "users": [
+    {
+      "id": 999,
+      "username": "sergio",
+      "password": "xxx"
+    },
+    {},
+    {}
+  ],
+  "products": [],
   "tasks": []
 }

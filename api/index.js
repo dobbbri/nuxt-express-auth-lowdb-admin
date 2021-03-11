@@ -1,25 +1,31 @@
 const express = require('express')
+const cors = require('cors')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
-const { connectToDB } = require('./database')
-const users = require('./routes/users')
-const tasks = require('./routes/tasks')
-const test = require('./routes/test')
+const { connectToDB } = require('./db')
+const users = require('./users/router')
+const products = require('./products/router')
 
 connectToDB()
 
 const app = express()
-app.use(morgan('dev'))
 app.use(bodyParser.json())
-app.use(users)
-app.use(tasks)
-app.use(test)
+app.use(morgan('dev'))
+app.use(cors())
+
+app.use('/users', users)
+app.use('/products', products)
+
+app.use((err, req, res, next) => {
+  res.status(err.status || 500).send({
+    error: { status: err.status || 500, message: err.message || 'Erro interno do servidor' }
+  })
+})
 
 module.exports = app
 
 // Start standalone server if directly running
 if (require.main === module) {
   const port = process.env.PORT || 3001
-  // eslint-disable-next-line no-console
-  app.listen(port, () => console.log(`API server listening on port ${port}`))
+  app.listen(port, () => console.log(`API server listening on port ${port}`)) // eslint-disable-line
 }

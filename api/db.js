@@ -1,16 +1,16 @@
 const low = require('lowdb')
 const FileAsync = require('lowdb/adapters/FileAsync')
-let db
+let dbConn
 
 const connectToDB = async () => {
   const adapter = new FileAsync('db.json')
-  db = await low(adapter)
-  db.defaults({ tasks: [] }).write()
+  dbConn = await low(adapter)
+  dbConn.defaults({ tasks: [] }).write()
 }
 
-const getConnection = () => db
+const conn = () => dbConn
 
 module.exports = {
   connectToDB,
-  getConnection
+  conn
 }
