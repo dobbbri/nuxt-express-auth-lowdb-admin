@@ -6,14 +6,7 @@
 
 <style>
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
     sans-serif;
   font-size: 16px;
   word-spacing: 1px;
@@ -59,5 +52,4 @@ html {
   color: #fff;
   background-color: #35495e;
 }
-
 </style>
