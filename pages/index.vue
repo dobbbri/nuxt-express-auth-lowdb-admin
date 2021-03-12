@@ -1,30 +1,20 @@
 <template>
   <div class="container">
-    <div>
-      {{ status }}
-    </div>
+    <nuxt-link class="button" to="/admin/products"> Produtos </nuxt-link>
   </div>
 </template>
 
 <script>
 export default {
   async asyncData({ $http }) {
-    const res = await $http.$get('/api/users')
-    return { status: res }
+    const res = await $http.$get('/api/users/')
+    return { user: res }
   },
 
-  data() {
+  head() {
     return {
-      user: {
-        username: 'sergio',
-        password: 'xxx'
-      }
+      title: `Usuário: ${this.user.username}`
     }
-  },
-
-  created() {
-    const xx = this.$http.$post('/api/users', this.user)
-    console.log(xx)
   }
 }
 </script>

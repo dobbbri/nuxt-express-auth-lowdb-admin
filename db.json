@@ -1,4 +1,11 @@
 {
+  "users": [
+    {
+      "id": "cda8828d-173c-4635-a4e5-05f13846c515",
+      "username": "sergio",
+      "password": "cd2eb0837c9b4c962c22d2ff8b5441b7b45805887f051d39bf133b583baf6860"
+    }
+  ],
   "products": [
     {
       "id": "565a25ea-d66f-4f09-8e12-c6d480beb447",
@@ -1399,13 +1406,6 @@
       "name": "Tulipa temperada",
       "unit": "Kilo",
       "amount": 27.99
-    }
-  ],
-  "users": [
-    {
-      "id": "cda8828d-173c-4635-a4e5-05f13846c515",
-      "username": "sergio",
-      "password": "xxx"
     }
   ],
   "tasks": []

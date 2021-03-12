@@ -17,9 +17,7 @@ app.use('/users', users)
 app.use('/products', products)
 
 app.use((err, req, res, next) => {
-  res.status(err.status || 500).send({
-    error: { status: err.status || 500, message: err.message || 'Erro interno do servidor' }
-  })
+  res.status(err.status || 500).json({ message: err.message || 'Erro interno do servidor' })
 })
 
 module.exports = app
