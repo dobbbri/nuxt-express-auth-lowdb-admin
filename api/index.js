@@ -2,9 +2,9 @@ const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
-const { connectToDB } = require('./db')
 const users = require('./users/router')
 const products = require('./products/router')
+const { connectToDB } = require('./db')
 
 connectToDB()
 

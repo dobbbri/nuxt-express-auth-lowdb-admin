@@ -6,9 +6,15 @@
 
 <script>
 export default {
-  async asyncData({ $http }) {
-    const res = await $http.$get('/api/users/')
-    return { user: res }
+  asyncData({ error, $http }) {
+    return $http
+      .$get('/api/users/')
+      .then((res) => {
+        return { user: res }
+      })
+      .catch((err) => {
+        error({ statusCode: err.status, message: err.message })
+      })
   },
 
   head() {

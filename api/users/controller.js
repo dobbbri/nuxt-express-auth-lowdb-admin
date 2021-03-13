@@ -4,8 +4,8 @@ const { conn } = require('../db')
 const userId = 'cda8828d-173c-4635-a4e5-05f13846c515'
 const controller = {}
 
-controller.getUser = async (req, res) => {
-  const user = await conn().get('users').find({ id: userId }).value()
+controller.getUser = (req, res) => {
+  const user = conn().get('users').find({ id: userId }).value()
   res.json(user)
 }
 

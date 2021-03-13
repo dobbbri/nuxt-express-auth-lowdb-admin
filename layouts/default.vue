@@ -5,18 +5,29 @@
 </template>
 
 <style>
-.label {
+thead > tr > th {
+  @apply px-6 py-2 text-xs font-medium tracking-wider text-left uppercase;
+}
+tbody > tr > td {
+  @apply px-6 py-3 whitespace-nowrap text-sm text-gray-500;
+}
+label {
   @apply block text-sm font-medium text-gray-700;
 }
-.imput,
-.select {
-  @apply w-full border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500;
+[type='text'],
+[type='email'],
+[type='url'],
+[type='password'],
+[type='number'],
+select {
+  @apply mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
 }
-.checkbox,
-.radio {
-  @apply border-gray-300 rounded text-indigo-600 focus:border-indigo-500 focus:bg-indigo-500;
+[type='checkbox'],
+[type='radio'] {
+  @apply focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded;
 }
 .button {
   @apply shadow-sm inline-flex justify-center w-full px-4 py-2 text-base font-medium border rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm;
 }
 </style>
+// https://github.com/tailwindlabs/tailwindcss-forms/blob/master/src/index.js

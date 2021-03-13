@@ -45,17 +45,10 @@ module.exports = {
         // 900: '#14532d'
       }
     },
-    extend: {
-      //  calc:  px / 4 = rem
-      // 100px / 4 = 25rem
-      // spacing: {
-      //   14: '3.5rem',
-      //   80: '20rem'
-      // }
-    }
+    extend: {}
   },
   variants: {
     extend: {}
   },
-  plugins: []
+  plugins: [require('@tailwindcss/forms')]
 }

@@ -1,63 +1,66 @@
 <template>
-  <div class="flex items-center justify-center min-h-screen px-4 py-12 bg-gray-50 sm:px-6 lg:px-8">
+  <div class="flex justify-center min-h-screen px-4 py-12 bg-gray-100 sm:px-6 lg:px-8">
     <div class="w-full max-w-md space-y-8">
-      <form action="#" method="POST">
-        <div class="overflow-hidden shadow sm:rounded-md">
-          <div class="px-4 py-5 bg-white sm:p-6">
-            <div class="mt-1">
-              <label for="form.name" class="label">Nome:</label>
-              <input
-                id="form.name"
-                type="text"
-                name="form.name"
-                placeholder="Informe o nome do produto"
-                required
-                class="input"
-              />
-            </div>
+      <div class="overflow-hidden rounded-lg shadow">
+        <div class="px-4 py-5 bg-white sm:p-6 space-y-4">
+          <h2 class="-mt-2 font-sans text-2xl font-semibold text-gray-900 sm:text-xl sm:truncate">
+            Adicionar produtos
+          </h2>
 
-            <div class="mt-1">
-              <label for="form.unity" class="label">Unidade:</label>
-              <select id="form.unity" name="form.unity" class="select">
-                <option>Kilo</option>
-                <option>Peça</option>
-              </select>
-            </div>
-
-            <div class="mt-1">
-              <label for="form.amount" class="label">Valor:</label>
-              <input
-                id="form.amount"
-                type="text"
-                name="form.amount"
-                placeholder="Informe o valor do produto"
-                required
-                class="input"
-              />
-            </div>
-
-            <div class="mt-1">
-              <input id="form.show" name="form.show" type="checkbox" class="checkbox" />
-              <label for="form.show" class="block ml-2 text-sm text-gray-700"> Exibir na lista de produtos </label>
-            </div>
+          <div>
+            <label for="form.name">Nome:</label>
+            <input
+              id="form.name"
+              type="text"
+              name="form.name"
+              autocomplete="form.name"
+              placeholder="Informe o nome do produto"
+              required
+              autofocus
+            />
           </div>
 
-          <div class="px-4 py-3 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse">
+          <div>
+            <label for="form.amount">Valor:</label>
+            <input
+              id="form.amount"
+              type="text"
+              name="form.amount"
+              autocomplete="form.amount"
+              placeholder="Informe o valor do produto"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="form.unity">Unidade:</label>
+            <select id="form.unity" name="form.unity" class="select">
+              <option>Kilo</option>
+              <option>Peça</option>
+            </select>
+          </div>
+
+          <div class="flex items-center">
+            <input id="form.show" name="form.show" type="checkbox" class="checkbox" />
+            <label for="form.show" class="ml-2 font-medium text-gray-700"> Exibir na lista de produtos </label>
+          </div>
+
+          <div class="sm:flex sm:flex-row-reverse">
             <button
               type="button"
               class="text-white bg-green-600 border-transparent button hover:bg-green-700 focus:ring-green-500"
             >
               Gravar
             </button>
-            <button
-              type="button"
-              class="text-gray-700 bg-white border-gray-300 button hover:bg-gray-50 focus:ring-indigo-500"
+            <nuxt-link
+              class="mt-3 text-gray-700 bg-white border-gray-300 button sm:mt-0 hover:bg-gray-50 focus:ring-indigo-500"
+              to="/admin/products"
             >
               Voltar
-            </button>
+            </nuxt-link>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </template>
@@ -72,6 +75,12 @@ export default {
         amount: 0,
         show: true
       }
+    }
+  },
+
+  head() {
+    return {
+      title: `Adicionar produto: ${this.form.name}`
     }
   },
 
