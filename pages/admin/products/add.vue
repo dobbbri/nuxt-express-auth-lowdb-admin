@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center min-h-screen px-4 py-12 bg-gray-100 sm:px-6 lg:px-8">
+  <div class="flex justify-center min-h-screen px-4 py-12 bg-gray-200 sm:px-6 lg:px-8">
     <div class="w-full max-w-md space-y-8">
       <div class="overflow-hidden rounded-lg shadow">
         <div class="px-4 py-5 bg-white sm:p-6 space-y-4">
@@ -11,8 +11,8 @@
             <label for="form.name">Nome:</label>
             <input
               id="form.name"
+              v-model="form.name"
               type="text"
-              name="form.name"
               autocomplete="form.name"
               placeholder="Informe o nome do produto"
               required
@@ -24,8 +24,8 @@
             <label for="form.amount">Valor:</label>
             <input
               id="form.amount"
+              v-model="form.amount"
               type="text"
-              name="form.amount"
               autocomplete="form.amount"
               placeholder="Informe o valor do produto"
               required
@@ -33,15 +33,15 @@
           </div>
 
           <div>
-            <label for="form.unity">Unidade:</label>
-            <select id="form.unity" name="form.unity" class="select">
+            <label for="form.unit">Unidade:</label>
+            <select id="form.unit" v-model="form.unit" class="select">
               <option>Kilo</option>
               <option>Peça</option>
             </select>
           </div>
 
           <div class="flex items-center">
-            <input id="form.show" name="form.show" type="checkbox" class="checkbox" />
+            <input id="form.show" v-model="form.show" type="checkbox" class="checkbox" />
             <label for="form.show" class="ml-2 font-medium text-gray-700"> Exibir na lista de produtos </label>
           </div>
 
@@ -49,14 +49,15 @@
             <button
               type="button"
               class="text-white bg-green-600 border-transparent button hover:bg-green-700 focus:ring-green-500"
+              @click="save"
             >
-              Gravar
+              Adicionar
             </button>
             <nuxt-link
               class="mt-3 text-gray-700 bg-white border-gray-300 button sm:mt-0 hover:bg-gray-50 focus:ring-indigo-500"
               to="/admin/products"
             >
-              Voltar
+              Cancelar
             </nuxt-link>
           </div>
         </div>
@@ -86,8 +87,9 @@ export default {
 
   methods: {
     async save() {
-      const res = await this.$http.$post('api/v1/brands', this.form)
+      const res = await this.$http.$post('api/products/', this.form)
       alert(res.message)
+      this.$router.push('/admin/products')
     }
   }
 }

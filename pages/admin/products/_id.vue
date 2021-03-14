@@ -1,9 +1,11 @@
 <template>
-  <div class="flex justify-center min-h-screen px-4 py-12 bg-gray-100 sm:px-6 lg:px-8">
+  <div class="flex justify-center min-h-screen px-4 py-12 bg-gray-200 sm:px-6 lg:px-8">
     <div class="w-full max-w-md space-y-8">
       <div class="overflow-hidden rounded-lg shadow">
         <div class="px-4 py-5 bg-white sm:p-6 space-y-4">
-          <h2 class="-mt-2 font-sans text-2xl font-semibold text-gray-900 sm:text-xl sm:truncate">Alterar produtos</h2>
+          <h2 class="-mt-2 font-sans text-2xl font-semibold text-gray-900 sm:text-xl sm:truncate">
+            Alterar/Excluir produto
+          </h2>
 
           <input id="form.id" v-model="form.id" type="hidden" />
 
@@ -51,13 +53,22 @@
               class="text-white bg-green-600 border-transparent button hover:bg-green-700 focus:ring-green-500"
               @click="save"
             >
-              Gravar
+              Alterar
             </button>
+
+            <button
+              type="button"
+              class="text-white bg-red-600 border-transparent button hover:bg-red-700 focus:ring-red-500"
+              @click="remove"
+            >
+              Excluir
+            </button>
+
             <nuxt-link
               class="mt-3 text-gray-700 bg-white border-gray-300 button sm:mt-0 hover:bg-gray-50 focus:ring-indigo-500"
               to="/admin/products"
             >
-              Voltar
+              Cancelar
             </nuxt-link>
           </div>
         </div>
@@ -75,14 +86,21 @@ export default {
 
   head() {
     return {
-      title: `Alterar produto: ${this.form.name}`
+      title: `Produto: ${this.form.name}`
     }
   },
 
   methods: {
     async save() {
-      const msg = await this.$http.$put(`/api/products/${this.form.id}`, this.form)
-      return { message: msg }
+      const res = await this.$http.$put(`/api/products/${this.form.id}`, this.form)
+      this.$router.push('/admin/products')
+      alert(res.message)
+    },
+
+    async remove() {
+      const res = await this.$http.$delete(`api/products/${this.form.id}`)
+      this.$router.push('/admin/products')
+      alert(res.message)
     }
   }
 }

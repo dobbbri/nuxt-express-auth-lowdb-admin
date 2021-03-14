@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center min-h-screen px-4 py-12 bg-gray-100 sm:px-6 lg:px-8">
+  <div class="flex justify-center min-h-screen px-4 py-12 bg-gray-200 sm:px-6 lg:px-8">
     <div class="w-full max-w-2xl space-y-8">
       <div class="overflow-hidden rounded-lg shadow">
         <div class="px-4 py-5 bg-white sm:p-6 space-y-4">
@@ -19,16 +19,16 @@
                   <table class="min-w-full divide-y divide-gray-300">
                     <thead class="bg-gray-50 to-gray-600">
                       <tr>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Valor</th>
-                        <th scope="col">Unidade</th>
-                        <th scope="col">Exibe?</th>
+                        <th scope="col" class="text-left">Nome</th>
+                        <th scope="col" class="text-right">Valor</th>
+                        <th scope="col" class="text-center">Unidade</th>
+                        <th scope="col" class="text-center">Exibir</th>
                       </tr>
                     </thead>
 
                     <tbody class="overflow-y-auto bg-white divide-y divide-gray-300">
-                      <tr v-for="(product, index) in products" :key="index">
-                        <td class="text-sm font-medium whitespace-nowrap">
+                      <tr v-for="product in products" :key="product.id">
+                        <td class="text-sm font-medium text-left whitespace-nowrap">
                           <nuxt-link
                             :to="{ name: 'admin-products-id', params: { id: product.id } }"
                             class="text-indigo-600 hover:text-indigo-900"
@@ -43,7 +43,7 @@
                           <span
                             class="inline-flex text-xs font-semibold text-green-800 bg-green-100 rounded-full leading-5"
                           >
-                            {{ product.show }}
+                            {{ product.show === true ? 'Sim' : 'Não' }}
                           </span>
                         </td>
                       </tr>

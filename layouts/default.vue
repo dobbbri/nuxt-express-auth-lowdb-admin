@@ -9,7 +9,7 @@ thead > tr > th {
   @apply px-6 py-2 text-xs font-medium tracking-wider text-left uppercase;
 }
 tbody > tr > td {
-  @apply px-6 py-3 whitespace-nowrap text-sm text-gray-500;
+  @apply px-6 py-2 whitespace-nowrap text-sm text-gray-500;
 }
 label {
   @apply block text-sm font-medium text-gray-700;

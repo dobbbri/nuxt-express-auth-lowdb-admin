@@ -4,8 +4,8 @@ const { conn } = require('../db')
 const controller = {}
 
 controller.getProducts = async (req, res) => {
-  const products = await conn().get('products').value()
-  res.status(200).json(products)
+  const products = await conn().get('products').sortBy('name').value()
+  res.json(products)
 }
 
 controller.getProduct = async (req, res) => {
@@ -31,7 +31,7 @@ controller.updateProduct = async (req, res) => {
 controller.removeProduct = async (req, res) => {
   const { id } = req.params
   await conn().get('products').remove({ id }).write()
-  res.json({ message: 'Produto removido' })
+  res.json({ message: 'Produto excluido' })
 }
 
 module.exports = controller

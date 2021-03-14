@@ -8,125 +8,6 @@
   ],
   "products": [
     {
-      "id": "565a25ea-d66f-4f09-8e12-c6d480beb447",
-      "show": true,
-      "name": "Asa de Frango",
-      "unit": "Kilo",
-      "amount": 18.99
-    },
-    {
-      "id": "346ed326-bd13-4be5-8c6d-2ec4289eafb7",
-      "show": true,
-      "name": "Alcatra",
-      "unit": "Kilo",
-      "amount": 35.99
-    },
-    {
-      "id": "63d9813c-1e65-4eb7-b914-a73c96489a05",
-      "show": true,
-      "name": "Bife Especial",
-      "unit": "Kilo",
-      "amount": 29.99
-    },
-    {
-      "id": "859fb88c-bca9-47f7-9c26-774bd793913a",
-      "show": true,
-      "name": "Bife Mole",
-      "unit": "Kilo",
-      "amount": 30.99
-    },
-    {
-      "id": "196facb1-8428-4166-a98d-759ecdf55ec9",
-      "show": true,
-      "name": "Bisteca Lombo",
-      "unit": "Kilo",
-      "amount": 18.99
-    },
-    {
-      "id": "cb92430c-8a19-469a-986c-0159d8a024f2",
-      "show": true,
-      "name": "Bisteca Copa",
-      "unit": "Kilo",
-      "amount": 17.99
-    },
-    {
-      "id": "63ecba31-f4fd-463a-9b15-d3c32da78c35",
-      "show": true,
-      "name": "Bucho",
-      "unit": "Kilo",
-      "amount": 16.99
-    },
-    {
-      "id": "a610ae8e-ee25-4077-a6e5-552a2cbf75e9",
-      "show": true,
-      "name": "Capa do Contra Filé",
-      "unit": "Kilo",
-      "amount": 27.99
-    },
-    {
-      "id": "d6e7e9ec-da24-4507-87b1-f6cc60686e20",
-      "show": true,
-      "name": "Chuleta do Contra Filé",
-      "unit": "Kilo",
-      "amount": 33.99
-    },
-    {
-      "id": "40191d05-d739-4937-83af-3ce6fab77ebb",
-      "show": true,
-      "name": "Chuleta Gaúcha",
-      "unit": "Kilo",
-      "amount": 23.49
-    },
-    {
-      "id": "bc3cd8da-7f77-469e-9b22-6fe9b03c25f3",
-      "show": true,
-      "name": "Chuletinha",
-      "unit": "Kilo",
-      "amount": 24.99
-    },
-    {
-      "id": "fac4d49a-c551-4bb4-9cf7-2a5e61e090b5",
-      "show": true,
-      "name": "Contra Filé",
-      "unit": "Kilo",
-      "amount": 38.99
-    },
-    {
-      "id": "649f331e-cbbd-45a3-9b9d-da833d5e476b",
-      "show": true,
-      "name": "Costela Minguinha",
-      "unit": "Kilo",
-      "amount": 20.99
-    },
-    {
-      "id": "a62a6003-9916-48e1-a023-a6afe7f99a1f",
-      "show": true,
-      "name": "Costela Suina",
-      "unit": "Kilo",
-      "amount": 20.99
-    },
-    {
-      "id": "02131fce-4502-4e76-83a5-21a4021a49a5",
-      "show": true,
-      "name": "Costela Paulista",
-      "unit": "Kilo",
-      "amount": 22.99
-    },
-    {
-      "id": "23d59530-8bb2-4213-9cf3-68f8b6207ebc",
-      "show": true,
-      "name": "Costelão",
-      "unit": "Kilo",
-      "amount": 21.99
-    },
-    {
-      "id": "79583d7f-53b9-4e25-9626-9bceb090d5df",
-      "show": true,
-      "name": "Coxa de Frango",
-      "unit": "Kilo",
-      "amount": 8.49
-    },
-    {
       "id": "2aa0b56b-7bf9-48b7-bbb3-d72e1bf81b34",
       "show": true,
       "name": "Coxão Duro",
@@ -330,20 +211,6 @@
       "amount": 27.99
     },
     {
-      "id": "fb82ee1c-9c1a-4203-a3fd-efc687568b2c",
-      "show": false,
-      "name": "Toscana do Shopping",
-      "unit": "Kilo",
-      "amount": 12.99
-    },
-    {
-      "id": "d9e07b01-7228-4242-b38c-36c2863c323e",
-      "show": true,
-      "name": "Tosana com Queijo",
-      "unit": "Kilo",
-      "amount": 17.99
-    },
-    {
       "id": "d21f584c-8177-4922-a25f-46077cef2181",
       "show": true,
       "name": "Toucinho",
@@ -356,125 +223,6 @@
       "name": "Tulipa temperada",
       "unit": "Kilo",
       "amount": 27.99
-    },
-    {
-      "id": "4f67c020-40c8-42e6-8144-791ea48db35b",
-      "show": true,
-      "name": "Asa de Frango",
-      "unit": "Kilo",
-      "amount": 18.99
-    },
-    {
-      "id": "b9210eeb-9eea-47d4-91c5-fdf7546871fa",
-      "show": true,
-      "name": "Alcatra",
-      "unit": "Kilo",
-      "amount": 35.99
-    },
-    {
-      "id": "47696853-3ba5-492e-8f89-b3054ea924ea",
-      "show": true,
-      "name": "Bife Especial",
-      "unit": "Kilo",
-      "amount": 29.99
-    },
-    {
-      "id": "0056ebfe-53b3-452a-82d2-2a4cb0edce05",
-      "show": true,
-      "name": "Bife Mole",
-      "unit": "Kilo",
-      "amount": 30.99
-    },
-    {
-      "id": "c7b26aca-881e-4465-8c2f-aae6a667935e",
-      "show": true,
-      "name": "Bisteca Lombo",
-      "unit": "Kilo",
-      "amount": 18.99
-    },
-    {
-      "id": "5b2eaf57-7873-44d2-984f-29e3c6bdd015",
-      "show": true,
-      "name": "Bisteca Copa",
-      "unit": "Kilo",
-      "amount": 17.99
-    },
-    {
-      "id": "4c8baf99-1f68-44f4-b63a-5fb9ea2fee85",
-      "show": true,
-      "name": "Bucho",
-      "unit": "Kilo",
-      "amount": 16.99
-    },
-    {
-      "id": "9c9bed7b-3dd9-423d-a6ff-4eed114f118b",
-      "show": true,
-      "name": "Capa do Contra Filé",
-      "unit": "Kilo",
-      "amount": 27.99
-    },
-    {
-      "id": "c7dc162d-e68b-4f32-ba0d-35cf18182ce0",
-      "show": true,
-      "name": "Chuleta do Contra Filé",
-      "unit": "Kilo",
-      "amount": 33.99
-    },
-    {
-      "id": "aea4d1b8-8778-4355-ae93-92342cc20e9c",
-      "show": true,
-      "name": "Chuleta Gaúcha",
-      "unit": "Kilo",
-      "amount": 23.49
-    },
-    {
-      "id": "5a655f32-d29a-4bd8-b0b7-d855a9400898",
-      "show": true,
-      "name": "Chuletinha",
-      "unit": "Kilo",
-      "amount": 24.99
-    },
-    {
-      "id": "7d213174-4170-4b43-ba14-cfb317ebaa94",
-      "show": true,
-      "name": "Contra Filé",
-      "unit": "Kilo",
-      "amount": 38.99
-    },
-    {
-      "id": "cedbbc30-0888-4867-8ad7-80b30499f21d",
-      "show": true,
-      "name": "Costela Minguinha",
-      "unit": "Kilo",
-      "amount": 20.99
-    },
-    {
-      "id": "588872c0-a283-4821-8990-260e7c6de78f",
-      "show": true,
-      "name": "Costela Suina",
-      "unit": "Kilo",
-      "amount": 20.99
-    },
-    {
-      "id": "46d469a9-d223-4bea-8bb0-7c8729a2675b",
-      "show": true,
-      "name": "Costela Paulista",
-      "unit": "Kilo",
-      "amount": 22.99
-    },
-    {
-      "id": "3f8fef7e-5fca-49d3-974f-e6814d4a503f",
-      "show": true,
-      "name": "Costelão",
-      "unit": "Kilo",
-      "amount": 21.99
-    },
-    {
-      "id": "53e495c8-dfaf-441e-86a2-f6806af3855e",
-      "show": true,
-      "name": "Coxa de Frango",
-      "unit": "Kilo",
-      "amount": 8.49
     },
     {
       "id": "7aafcd1c-6a36-4f5d-a0a8-1680f128b3d3",
@@ -503,13 +251,6 @@
       "name": "Cupin",
       "unit": "Kilo",
       "amount": 29.99
-    },
-    {
-      "id": "c0854a23-2a7b-420f-ba16-678d17fe0b22",
-      "show": true,
-      "name": "Filé de Frango",
-      "unit": "Kilo",
-      "amount": 13.99
     },
     {
       "id": "d6b6b21d-737c-4164-996f-42fb869a1086",
@@ -680,69 +421,6 @@
       "amount": 27.99
     },
     {
-      "id": "58a89218-85cd-4322-b24c-cc22a35d1c50",
-      "show": false,
-      "name": "Toscana do Shopping",
-      "unit": "Kilo",
-      "amount": 12.99
-    },
-    {
-      "id": "195a5b24-7343-43b3-b5a2-4cec78acb989",
-      "show": true,
-      "name": "Tosana com Queijo",
-      "unit": "Kilo",
-      "amount": 17.99
-    },
-    {
-      "id": "e403b662-2ac3-43a5-9653-633b7e7170f8",
-      "show": true,
-      "name": "Toucinho",
-      "unit": "Kilo",
-      "amount": 14.99
-    },
-    {
-      "id": "f74adffa-cb65-49a4-aff9-6b0a3f076cdf",
-      "show": true,
-      "name": "Tulipa temperada",
-      "unit": "Kilo",
-      "amount": 27.99
-    },
-    {
-      "id": "6082ad90-4fba-48b3-b1e7-9dd97bd5e1f1",
-      "show": true,
-      "name": "Asa de Frango",
-      "unit": "Kilo",
-      "amount": 18.99
-    },
-    {
-      "id": "e00df9bc-a0ec-460b-98c9-3279a7323e60",
-      "show": true,
-      "name": "Alcatra",
-      "unit": "Kilo",
-      "amount": 35.99
-    },
-    {
-      "id": "392112de-780a-4458-8066-b0d01c2a8f84",
-      "show": true,
-      "name": "Bife Especial",
-      "unit": "Kilo",
-      "amount": 29.99
-    },
-    {
-      "id": "04d9cbd4-3df0-4133-b098-982171ea8349",
-      "show": true,
-      "name": "Bife Mole",
-      "unit": "Kilo",
-      "amount": 30.99
-    },
-    {
-      "id": "74f2cfb0-b3bf-4f52-a98e-8a5d093d5531",
-      "show": true,
-      "name": "Bisteca Copa",
-      "unit": "Kilo",
-      "amount": 17.99
-    },
-    {
       "id": "a922f119-6973-4bef-8b0f-b8d135fad429",
       "show": true,
       "name": "Bisteca Lombo",
@@ -750,67 +428,11 @@
       "amount": 18.99
     },
     {
-      "id": "d9bc20be-d446-4b4c-b200-a1e2dd5aeab9",
-      "show": true,
-      "name": "Capa do Contra Filé",
-      "unit": "Kilo",
-      "amount": 27.99
-    },
-    {
-      "id": "d38c96d8-b60a-4efd-8a0a-26db6f86f9e2",
-      "show": true,
-      "name": "Bucho",
-      "unit": "Kilo",
-      "amount": 16.99
-    },
-    {
-      "id": "4f46e06f-35fc-487f-86b5-3526f4be5215",
-      "show": true,
-      "name": "Chuleta do Contra Filé",
-      "unit": "Kilo",
-      "amount": 33.99
-    },
-    {
-      "id": "df6d2fe0-a81e-42d6-b1de-f680d69c5d65",
-      "show": true,
-      "name": "Chuleta Gaúcha",
-      "unit": "Kilo",
-      "amount": 23.49
-    },
-    {
-      "id": "5b0559b1-4dd4-4018-9385-16f97b29de15",
-      "show": true,
-      "name": "Chuletinha",
-      "unit": "Kilo",
-      "amount": 24.99
-    },
-    {
-      "id": "d07c0ff5-2245-4778-b614-335bdaa0a675",
-      "show": true,
-      "name": "Costela Minguinha",
-      "unit": "Kilo",
-      "amount": 20.99
-    },
-    {
-      "id": "2dce730b-ece6-46cb-af8c-c74f3c7096a3",
-      "show": true,
-      "name": "Contra Filé",
-      "unit": "Kilo",
-      "amount": 38.99
-    },
-    {
       "id": "d3f425ea-a334-47ab-8d58-7b485fedbb56",
       "show": true,
       "name": "Costela Paulista",
       "unit": "Kilo",
       "amount": 22.99
-    },
-    {
-      "id": "bf9b08ad-e13f-4aeb-832f-bc258010949c",
-      "show": true,
-      "name": "Costela Suina",
-      "unit": "Kilo",
-      "amount": 20.99
     },
     {
       "id": "348460e0-0fb1-49e2-a607-a83bab9ad689",
@@ -1030,34 +652,6 @@
       "amount": 19.99
     },
     {
-      "id": "abcba3eb-bcd1-4810-b150-8d1ee61d63eb",
-      "show": true,
-      "name": "Tosana com Queijo",
-      "unit": "Kilo",
-      "amount": 17.99
-    },
-    {
-      "id": "4b3ab259-8e24-4b89-8549-520178986ba5",
-      "show": false,
-      "name": "Toscana do Shopping",
-      "unit": "Kilo",
-      "amount": 12.99
-    },
-    {
-      "id": "3b5e4d20-d07f-44d6-92a8-8b1fff613a15",
-      "show": true,
-      "name": "Tulipa temperada",
-      "unit": "Kilo",
-      "amount": 27.99
-    },
-    {
-      "id": "fad47436-113b-4860-8749-74e5f683c9af",
-      "show": true,
-      "name": "Toucinho",
-      "unit": "Kilo",
-      "amount": 14.99
-    },
-    {
       "id": "7a656b51-6f37-43c2-b415-f815805bf5c8",
       "show": true,
       "name": "Asa de Frango",
@@ -1084,13 +678,6 @@
       "name": "Bife Mole",
       "unit": "Kilo",
       "amount": 30.99
-    },
-    {
-      "id": "7fc15a5e-18fa-465b-8929-f7d6126f22f1",
-      "show": true,
-      "name": "Bisteca Lombo",
-      "unit": "Kilo",
-      "amount": 18.99
     },
     {
       "id": "5b3f3315-df20-46b9-bab4-eb5482320e87",
@@ -1128,13 +715,6 @@
       "amount": 23.49
     },
     {
-      "id": "61be1c69-a2bd-4582-8d06-7e99ffbd83af",
-      "show": true,
-      "name": "Chuletinha",
-      "unit": "Kilo",
-      "amount": 24.99
-    },
-    {
       "id": "24508be6-c92b-4b75-bb91-ba596ef031a1",
       "show": true,
       "name": "Contra Filé",
@@ -1154,20 +734,6 @@
       "name": "Costela Suina",
       "unit": "Kilo",
       "amount": 20.99
-    },
-    {
-      "id": "b32a35fa-913c-4d05-b66c-2fba24123cf6",
-      "show": true,
-      "name": "Costela Paulista",
-      "unit": "Kilo",
-      "amount": 22.99
-    },
-    {
-      "id": "d5dd7405-2413-45e1-88e8-146f3b483f3b",
-      "show": true,
-      "name": "Costelão",
-      "unit": "Kilo",
-      "amount": 21.99
     },
     {
       "id": "4a003f78-9ed7-4708-8923-c931a9a4f445",
@@ -1389,23 +955,9 @@
     {
       "id": "a94dbed6-884c-4df3-93c5-56c867c127d7",
       "show": true,
-      "name": "Tosana com Queijo",
+      "name": "Toscana com Queijo",
       "unit": "Kilo",
       "amount": 17.99
-    },
-    {
-      "id": "b954c5b6-1046-4223-9116-2cdca8a890a4",
-      "show": true,
-      "name": "Toucinho",
-      "unit": "Kilo",
-      "amount": 14.99
-    },
-    {
-      "id": "12e0bef8-c91f-4a9f-b826-18d0b12ac092",
-      "show": true,
-      "name": "Tulipa temperada",
-      "unit": "Kilo",
-      "amount": 27.99
     }
   ],
   "tasks": [],
