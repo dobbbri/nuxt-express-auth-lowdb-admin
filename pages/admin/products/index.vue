@@ -6,7 +6,9 @@
           <div class="flex flex-row justify-between -my-2">
             <h2 class="w-full font-sans text-2xl font-semibold text-gray-900 sm:text-xl sm:truncate">Produtos</h2>
 
-            <nuxt-link :to="{ name: 'admin-products-add' }" class="button green-button"> Adicionar </nuxt-link>
+            <nuxt-link :to="{ name: 'admin-products-add' }" class="button green-button" style="width: auto">
+              Adicionar
+            </nuxt-link>
           </div>
           <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">

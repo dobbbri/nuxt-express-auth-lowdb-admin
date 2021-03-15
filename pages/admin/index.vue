@@ -29,7 +29,9 @@
           </div>
 
           <div class="w-full">
-            <button type="button" class="button green-button" @click="login">Entrar</button>
+            <button type="button" class="button green-button" style="margin-left: 0; width: 100%" @click="login">
+              Entrar
+            </button>
           </div>
         </div>
       </div>
