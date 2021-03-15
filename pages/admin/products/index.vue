@@ -5,12 +5,8 @@
         <div class="px-4 py-5 bg-white sm:p-6 space-y-4">
           <div class="flex flex-row justify-between -my-2">
             <h2 class="w-full font-sans text-2xl font-semibold text-gray-900 sm:text-xl sm:truncate">Produtos</h2>
-            <nuxt-link
-              :to="{ name: 'admin-products-add' }"
-              class="text-white truncate bg-green-600 border-transparent button hover:bg-green-700 focus:ring-green-500"
-            >
-              Adicionar
-            </nuxt-link>
+
+            <nuxt-link :to="{ name: 'admin-products-add' }" class="button green-button"> Adicionar </nuxt-link>
           </div>
           <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">

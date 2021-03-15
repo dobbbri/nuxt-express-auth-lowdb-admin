@@ -1,26 +1,5 @@
 <template>
-  <div class="container">
-    <nuxt-link class="button" to="/admin/products"> Produtos </nuxt-link>
+  <div class="flex justify-center min-h-screen px-4 py-12 bg-gray-200 sm:px-6 lg:px-8">
+    <nuxt-link class="button" to="/admin"> Login </nuxt-link>
   </div>
 </template>
-
-<script>
-export default {
-  asyncData({ error, $http }) {
-    return $http
-      .$get('/api/users/')
-      .then((res) => {
-        return { user: res }
-      })
-      .catch((err) => {
-        error({ statusCode: err.status, message: err.message })
-      })
-  },
-
-  head() {
-    return {
-      title: `Usuário: ${this.user.username}`
-    }
-  }
-}
-</script>

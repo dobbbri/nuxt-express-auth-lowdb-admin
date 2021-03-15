@@ -48,28 +48,9 @@
           </div>
 
           <div class="sm:flex sm:flex-row-reverse">
-            <button
-              type="button"
-              class="text-white bg-green-600 border-transparent button hover:bg-green-700 focus:ring-green-500"
-              @click="save"
-            >
-              Alterar
-            </button>
-
-            <button
-              type="button"
-              class="text-white bg-red-600 border-transparent button hover:bg-red-700 focus:ring-red-500"
-              @click="remove"
-            >
-              Excluir
-            </button>
-
-            <nuxt-link
-              class="mt-3 text-gray-700 bg-white border-gray-300 button sm:mt-0 hover:bg-gray-50 focus:ring-indigo-500"
-              to="/admin/products"
-            >
-              Cancelar
-            </nuxt-link>
+            <button type="button" class="button green-button" @click="save">Alterar</button>
+            <button type="button" class="button red-button" @click="remove">Excluir</button>
+            <nuxt-link class="button gray-button" to="/admin/products"> Cancelar </nuxt-link>
           </div>
         </div>
       </div>
