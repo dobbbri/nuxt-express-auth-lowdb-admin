@@ -1,6 +1,6 @@
 export default {
   target: 'server',
-
+  telemetry: false,
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -13,7 +13,7 @@ export default {
 
   css: [],
 
-  plugins: ['~/plugins/http'],
+  plugins: ['~/plugins/axios'],
 
   components: true,
 
@@ -22,11 +22,40 @@ export default {
   tailwindcss: {
     viewer: false
   },
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next'],
 
-  modules: ['@nuxt/http'],
+  middleware: 'auth',
+
+  axios: {
+    // proxy: true
+  },
 
   serverMiddleware: {
     '/api': '~/api'
+  },
+
+  auth: {
+    redirect: {
+      login: '/admin',
+      logout: '/',
+      callback: '/admin',
+      home: '/admin/products'
+    },
+    strategies: {
+      local: {
+        token: {
+          property: 'token.accessToken'
+        },
+        user: {
+          property: 'user'
+        },
+        endpoints: {
+          login: { url: '/api/auth/login', method: 'post' },
+          me: { url: '/api/users', method: 'get' },
+          logout: false
+        }
+      }
+    }
   },
 
   /*

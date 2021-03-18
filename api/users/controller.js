@@ -1,4 +1,4 @@
-const crypto = require('crypto')
+const bcrypt = require('bcrypt')
 const { conn } = require('../db')
 
 const userId = 'cda8828d-173c-4635-a4e5-05f13846c515'
@@ -11,7 +11,8 @@ controller.getUser = (req, res) => {
 
 controller.saveUser = async (req, res) => {
   const { username, password } = req.body
-  const pwd = crypto.createHash('sha256').update(password).digest('hex')
+  const salt = await bcrypt.genSalt(10)
+  const pwd = await bcrypt.hash(password, salt)
   const qtd = await conn().get('users').size().value()
   if (qtd < 1) {
     await conn().get('users').push({ id: userId, username, password: pwd }).write()
