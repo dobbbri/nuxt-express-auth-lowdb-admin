@@ -16,15 +16,16 @@ controller.getProduct = async (req, res) => {
 
 controller.createProduct = async (req, res) => {
   const { show, name, unit, amount } = req.body
-  const newProduct = { id: nanoid(), show, name, unit, amount }
+  const newProduct = { id: nanoid(), show, name, unit, amount: parseFloat(amount.replace(',', '.')) }
   await conn().get('products').push(newProduct).write()
-  res.json({ message: 'Produto criado' })
+  res.status(200).json({ message: 'Produto criado' })
 }
 
 controller.updateProduct = async (req, res) => {
   const { id } = req.params
   const { show, name, unit, amount } = req.body
-  await conn().get('products').find({ id }).assign({ show, name, unit, amount }).write()
+  const value = parseFloat(amount).toFixed(2)
+  await conn().get('products').find({ id }).assign({ show, name, unit, amount: value }).write()
   res.json({ message: 'Produto alterado' })
 }
 
