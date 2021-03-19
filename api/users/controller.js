@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt')
 const { conn } = require('../db')
 
-const userId = 'cda8828d-173c-4635-a4e5-05f13846c515'
+const userId = 'V1StGXR8_Z5jdHi6B-myT'
 const controller = {}
 
 controller.getUser = (req, res) => {

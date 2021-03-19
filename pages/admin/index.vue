@@ -60,12 +60,22 @@ export default {
     }
   },
 
+  computed: {
+    redirect() {
+      return this.$route.query.redirect && decodeURIComponent(this.$route.query.redirect)
+    },
+    isCallback() {
+      return Boolean(this.$route.query.callback)
+    }
+  },
+
   methods: {
     async login() {
-      await this.$auth.loginWith('local', {
-        data: this.form
-      })
-      this.$router.push('/')
+      await this.$auth
+        .loginWith('local', {
+          data: this.form
+        })
+        .then(() => this.$router.push('/'))
     }
   }
 }

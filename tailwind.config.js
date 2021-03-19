@@ -1,5 +1,12 @@
 module.exports = {
-  purge: ['components/**/*.vue', 'layouts/**/*.vue', 'pages/**/*.vue', 'plugins/**/*.js', 'nuxt.config.js'],
+  purge: [
+    'node_modules/tv-*/dist/tv-*.umd.min.js',
+    'components/**/*.vue',
+    'layouts/**/*.vue',
+    'pages/**/*.vue',
+    'plugins/**/*.js',
+    'nuxt.config.js'
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
@@ -7,18 +14,23 @@ module.exports = {
       current: 'currentColor',
       black: '#000',
       white: '#fff',
-      primary: { 500: '#e53e3e' },
+      primary: {
+        500: '#e53e3e'
+      },
       indigo: {
-        // 50: '#eef2ff',
-        // 100: '#e0e7ff',
-        // 200: '#c7d2fe',
-        // 300: '#a5b4fc',
-        // 400: '#818cf8',
         500: '#6366f1',
         600: '#4f46e5',
         700: '#4338ca'
-        // 800: '#3730a3',
-        // 900: '#312e81'
+      },
+      green: {
+        500: '#22c55e',
+        600: '#16a34a',
+        700: '#15803d'
+      },
+      red: {
+        500: '#ef4444',
+        600: '#dc2626',
+        700: '#b91c1c'
       },
       gray: {
         50: '#f8fafc',
@@ -31,30 +43,6 @@ module.exports = {
         700: '#334155',
         800: '#1e293b',
         900: '#0f172a'
-      },
-      green: {
-        // 50: '#f0fdf4',
-        // 100: '#dcfce7',
-        // 200: '#bbf7d0',
-        // 300: '#86efac',
-        // 400: '#4ade80',
-        500: '#22c55e',
-        600: '#16a34a',
-        700: '#15803d'
-        // 800: '#166534',
-        // 900: '#14532d'
-      },
-      red: {
-        // 50: '#fef2f2',
-        // 100: '#fee2e2',
-        // 200: '#fecaca',
-        // 300: '#fca5a5',
-        // 400: '#f87171',
-        500: '#ef4444',
-        600: '#dc2626',
-        700: '#b91c1c'
-        // 800: '#991b1b',
-        // 900: '#7f1d1d'
       }
     },
     extend: {}

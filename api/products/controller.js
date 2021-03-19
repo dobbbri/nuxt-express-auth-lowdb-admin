@@ -1,4 +1,4 @@
-const { v4 } = require('uuid')
+const { nanoid } = require('nanoid')
 const { conn } = require('../db')
 
 const controller = {}
@@ -16,7 +16,7 @@ controller.getProduct = async (req, res) => {
 
 controller.createProduct = async (req, res) => {
   const { show, name, unit, amount } = req.body
-  const newProduct = { id: v4(), show, name, unit, amount }
+  const newProduct = { id: nanoid(), show, name, unit, amount }
   await conn().get('products').push(newProduct).write()
   res.json({ message: 'Produto criado' })
 }

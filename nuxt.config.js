@@ -20,19 +20,27 @@ export default {
   buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/tailwindcss'],
 
   tailwindcss: {
-    viewer: false
+    viewer: false,
+    jit: true
   },
-  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next'],
+
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
+    [
+      'nuxt-tailvue',
+      {
+        all: true,
+        toast: {
+          defaultProps: {
+            timeout: 10
+          }
+        }
+      }
+    ]
+  ],
 
   middleware: 'auth',
-
-  axios: {
-    // proxy: true
-  },
-
-  serverMiddleware: {
-    '/api': '~/api'
-  },
 
   auth: {
     redirect: {
@@ -51,11 +59,15 @@ export default {
         },
         endpoints: {
           login: { url: '/api/auth/login', method: 'post' },
-          me: { url: '/api/users', method: 'get' },
+          user: { url: '/api/users', method: 'get' },
           logout: false
         }
       }
     }
+  },
+
+  serverMiddleware: {
+    '/api': '~/api'
   },
 
   /*

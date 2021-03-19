@@ -4,15 +4,16 @@ const { conn } = require('../db')
 const controller = {}
 const refreshTokens = {}
 
-controller.login = async (req, res) => {
+controller.login = async (req, res, next) => {
+  // try {
   const { username, password } = req.body
   const user = await conn().get('users').find({ username }).value()
   if (!user) {
-    throw new Error('Usuário ou senha inválida')
+    next(new Error('Usuário ou senha inválida'))
   }
   const valid = await bcrypt.compare(password, user.password)
   if (!valid) {
-    throw new Error('Usuário ou senha inválida')
+    next(new Error('Usuário ou senha inválida'))
   }
   const expiresIn = 15
   const refreshToken = Math.floor(Math.random() * (1000000000000000 - 1 + 1)) + 1
@@ -37,6 +38,9 @@ controller.login = async (req, res) => {
     }
   }
   res.json({ token: { accessToken, refreshToken } })
+  // } catch (error) {
+  //   next(error)
+  // }
 }
 
 module.exports = controller

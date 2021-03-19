@@ -81,13 +81,23 @@ export default {
     async save() {
       const res = await this.$axios.$put(`/api/products/${this.form.id}`, this.form)
       this.$router.push('/admin/products')
-      alert(res.message)
+      this.$toast.success(res.message)
+    },
+
+    confirm() {
+      this.$modal.show({
+        type: 'danger',
+        title: 'Confirme a exclusão',
+        body: 'Esta ação é permanente e não poderá ser desfeita.',
+        primary: { label: 'Confirmar', theme: 'red', action: () => this.remove() },
+        secondary: { label: 'Cancelar', theme: 'white', action: () => null }
+      })
     },
 
     async remove() {
       const res = await this.$axios.$delete(`api/products/${this.form.id}`)
       this.$router.push('/admin/products')
-      alert(res.message)
+      this.$toast.success(res.message)
     }
   }
 }

@@ -1,5 +1,3 @@
 <template>
-  <div class="flex justify-center min-h-screen px-4 py-2 bg-gray-200 sm:px-6 lg:px-8">
-    <nuxt-link class="button" to="/admin"> Login </nuxt-link>
-  </div>
+  <nuxt-link to="/admin"> Login </nuxt-link>
 </template>

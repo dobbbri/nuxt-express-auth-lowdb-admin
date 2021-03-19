@@ -67,7 +67,7 @@ export default {
     return {
       form: {
         name: '',
-        unity: '',
+        unity: 'Kilo',
         amount: 0,
         show: true
       }
@@ -83,8 +83,8 @@ export default {
   methods: {
     async save() {
       const res = await this.$axios.$post('api/products/', this.form)
-      alert(res.message)
       this.$router.push('/admin/products')
+      this.$toast.success(res.message)
     }
   }
 }
