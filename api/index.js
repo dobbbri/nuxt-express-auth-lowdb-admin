@@ -3,7 +3,7 @@ const cors = require('cors')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
-// const jwt = require('express-jwt')
+const jwt = require('express-jwt')
 const auth = require('./auth')
 const users = require('./users')
 const products = require('./products')
@@ -21,14 +21,14 @@ app.use(morgan('dev'))
 app.use(cors())
 
 // JWT middleware
-// app.use(
-//   jwt({
-//     secret: 'dummy',
-//     algorithms: ['sha1', 'RS256', 'HS256']
-//   }).unless({
-//     path: ['/api/auth/login', '/api/users', '/api/products']
-//   })
-// )
+app.use(
+  jwt({
+    secret: 'dummy',
+    algorithms: ['sha1', 'RS256', 'HS256']
+  }).unless({
+    path: ['/api/auth/login']
+  })
+)
 
 app.use('/auth', auth)
 app.use('/users', users)
