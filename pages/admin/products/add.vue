@@ -46,7 +46,7 @@
           </div>
 
           <div class="sm:flex sm:flex-row-reverse">
-            <button type="button" class="btn btn-green" @click="save">Adicionar</button>
+            <button type="button" class="btn btn-green" style="w-auto" @click="save">Incluir</button>
             <nuxt-link class="btn btn-gray" to="/admin/products">Cancelar</nuxt-link>
           </div>
         </div>
@@ -81,12 +81,19 @@ export default {
   methods: {
     async save() {
       await this.$axios
-        .$post('api/products/', this.form)
+        .$post('api/products/', { data: this.form })
         .then((res) => {
-          this.$toast.show({ type: 'success', title: 'Sucesso:', message: res.message })
+          this.$toast.show({ type: 'success', classToast: 'bg-green-500', message: res.message })
           this.$router.push('/admin/products')
         })
-        .catch((err) => this.$toast.show({ type: 'danger', title: 'Erro:', message: err.response.data.error }))
+        .catch((err) =>
+          this.$toast.show({
+            type: 'danger',
+            classToast: 'bg-red-500',
+            timeout: false,
+            message: err.response.data.error || err.toString()
+          })
+        )
     }
   }
 }

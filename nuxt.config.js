@@ -24,16 +24,34 @@ export default {
     jit: true
   },
 
-  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', ['nuxt-tailvue', { toast: true }]],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
+    [
+      'nuxt-tailvue',
+      {
+        all: true,
+        toast: {
+          defaultProps: {
+            timeout: 10,
+            classTitle: 'text-white opacity-75',
+            classMessage: 'text-white',
+            classClose: 'text-gray-900',
+            classTimeout: 'bg-white opacity-50'
+          }
+        }
+      }
+    ]
+  ],
 
   middleware: 'auth',
 
   auth: {
-    // redirect: {
-    //   login: '/admin',
-    //   logout: '/',
-    //   home: '/admin/products'
-    // },
+    redirect: {
+      login: '/admin',
+      logout: '/',
+      home: '/admin/products'
+    },
     strategies: {
       local: {
         token: {

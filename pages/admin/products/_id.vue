@@ -49,7 +49,7 @@
 
           <div class="sm:flex sm:flex-row-reverse">
             <button type="button" class="btn btn-green" @click="save">Alterar</button>
-            <button type="button" class="btn btn-red" @click="remove">Excluir</button>
+            <button type="button" class="btn btn-red" @click="confirm">Excluir</button>
             <nuxt-link class="btn btn-gray" to="/admin/products"> Cancelar </nuxt-link>
           </div>
         </div>
@@ -70,7 +70,7 @@ export default {
       .then((res) => {
         return { form: res }
       })
-      .catch((err) => $toast.show({ type: 'danger', title: 'Erro:', message: err.response.data.error }))
+      .catch((err) => $toast.show({ type: 'danger', classToast: 'bg-red-500', message: err.response.data.error }))
   },
 
   head() {
@@ -87,11 +87,13 @@ export default {
           this.$toast.show({ type: 'success', title: 'Sucesso:', message: res.message })
           this.$router.push('/admin/products')
         })
-        .catch((err) => this.$toast.show({ type: 'danger', title: 'Erro:', message: err.response.data.error }))
+        .catch((err) =>
+          this.$toast.show({ type: 'danger', classToast: 'bg-red-500', message: err.response.data.error })
+        )
     },
 
     confirm() {
-      this.$toast.show({
+      this.$modal.show({
         type: 'danger',
         title: 'Confirme a exclusão',
         body: 'Esta ação é permanente e não poderá ser desfeita.',
@@ -101,9 +103,15 @@ export default {
     },
 
     async remove() {
-      const res = await this.$axios.$delete(`api/products/${this.form.id}`)
-      this.$router.push('/admin/products')
-      this.$toast.success(res.message)
+      await this.$axios
+        .$delete(`api/products/${this.form.id}`)
+        .then((res) => {
+          this.$toast.show({ type: 'success', title: 'Sucesso:', message: res.message })
+          this.$router.push('/admin/products')
+        })
+        .catch((err) =>
+          this.$toast.show({ type: 'danger', classToast: 'bg-red-500', message: err.response.data.error })
+        )
     }
   }
 }

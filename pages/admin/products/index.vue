@@ -69,7 +69,14 @@ export default {
       .then((res) => {
         return { products: res }
       })
-      .catch((err) => $toast.show({ type: 'danger', title: 'Erro:', message: err.response.data.error }))
+      .catch((err) =>
+        $toast.show({
+          type: 'danger',
+          classToast: 'bg-red-500',
+          timeout: false,
+          message: err.response.data.error || err.toString()
+        })
+      )
   },
 
   head() {

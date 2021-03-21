@@ -68,11 +68,10 @@ export default {
     async login() {
       await this.$auth
         .loginWith('local', { data: this.form })
-        .then(() => {
-          this.$toast.show({ type: 'success', title: 'Sucesso:', message: `Bem-vindo ${this.$auth.user.username}` })
-          this.$router.push('/admin/products')
-        })
-        .catch((err) => this.$toast.show({ type: 'danger', title: 'Erro:', message: err.response.data.error }))
+        .then(() => this.$router.push('/admin/products'))
+        .catch((err) =>
+          this.$toast.show({ type: 'danger', classToast: 'bg-red-500', message: err.response.data.error })
+        )
     }
   }
 }
