@@ -6,6 +6,52 @@
   html {
     -webkit-tap-highlight-color: transparent;
   }
+
+  thead > tr > th {
+    @apply px-6 py-2 text-xs font-medium tracking-wider text-left uppercase;
+  }
+
+  tbody > tr > td {
+    @apply px-6 py-2 text-sm text-gray-500 whitespace-nowrap;
+  }
+
+  label {
+    @apply block text-sm font-medium text-gray-700;
+  }
+
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  select {
+    @apply block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
+  }
+
+  [type='checkbox'],
+  [type='radio'] {
+    @apply w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500;
+  }
+}
+
+/* https://github.com/tailwindlabs/tailwindcss-forms/blob/master/src/index.js */
+
+@layer components {
+  .btn {
+    @apply inline-flex justify-center w-full px-4 py-2 text-base font-medium border shadow-sm rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm;
+  }
+
+  .btn-green {
+    @apply text-white bg-green-600 border-transparent hover:bg-green-700 focus:ring-green-500 focus:border-green-500;
+  }
+
+  .btn-gray {
+    @apply text-gray-700 bg-white border-gray-300 hover:bg-gray-50 focus:ring-gray-500 focus:border-gray-500;
+  }
+
+  .btn-red {
+    @apply text-white bg-red-600 border-transparent hover:bg-red-700 focus:ring-red-500 focus:border-red-500;
+  }
 }
 
 @layer utilities {

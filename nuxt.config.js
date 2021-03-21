@@ -13,7 +13,7 @@ export default {
 
   css: [],
 
-  plugins: ['~/plugins/axios'],
+  plugins: [],
 
   components: true,
 
@@ -24,43 +24,28 @@ export default {
     jit: true
   },
 
-  modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/auth-next',
-    [
-      'nuxt-tailvue',
-      {
-        all: true,
-        toast: {
-          defaultProps: {
-            timeout: 10
-          }
-        }
-      }
-    ]
-  ],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', ['nuxt-tailvue', { toast: true }]],
 
   middleware: 'auth',
 
   auth: {
-    redirect: {
-      login: '/admin',
-      logout: '/',
-      callback: '/admin',
-      home: '/admin/products'
-    },
+    // redirect: {
+    //   login: '/admin',
+    //   logout: '/',
+    //   home: '/admin/products'
+    // },
     strategies: {
       local: {
         token: {
           property: 'token.accessToken'
         },
         user: {
-          property: 'user'
+          property: false
         },
         endpoints: {
           login: { url: '/api/auth/login', method: 'post' },
           user: { url: '/api/users', method: 'get' },
-          logout: false
+          logout: { url: '/api/auth/logout', method: 'get' }
         }
       }
     }

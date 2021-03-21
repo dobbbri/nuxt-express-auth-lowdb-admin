@@ -22,7 +22,7 @@
         <nuxt-link v-if="$auth.loggedIn" class="ml-4 hover:text-indigo-500" to="/admin/password"
           >Alterar Senha</nuxt-link
         >
-        <button type="button" class="button red-button" style="width: auto" @click="logout">Sair</button>
+        <button type="button" class="btn btn-red" style="width: auto" @click="logout">Sair</button>
       </nav>
     </div>
   </header>

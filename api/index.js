@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
+const helmet = require('helmet')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const jwt = require('express-jwt')
@@ -15,10 +16,11 @@ connectToDB()
 const app = express()
 
 // Install middleware
-app.use(cookieParser())
-app.use(bodyParser.json())
 app.use(morgan('dev'))
+app.use(helmet())
 app.use(cors())
+app.use(bodyParser.json())
+app.use(cookieParser())
 
 // JWT middleware
 app.use(
@@ -36,7 +38,7 @@ app.use('/products', products)
 
 app.use((err, req, res, next) => {
   console.error(err)
-  res.status(err.status || 500).json({ message: err.message || 'Erro interno do servidor' })
+  res.status(err.status || 500).json({ error: err.message || 'Erro interno do servidor' })
 })
 
 module.exports = app
