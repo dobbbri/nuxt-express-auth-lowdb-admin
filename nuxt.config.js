@@ -29,7 +29,7 @@ export default {
     '@nuxtjs/auth-next',
     [
       'vue-currency-input/nuxt',
-      { globalOptions: { currency: null, precision: 2, autoDecimalMode: true, allowNegative: false } }
+      { globalOptions: { currency: null, locale: 'pt-BR', precision: 2, autoDecimalMode: true, allowNegative: false } }
     ],
     [
       'nuxt-tailvue',
@@ -51,6 +51,9 @@ export default {
   middleware: 'auth',
 
   auth: {
+    redirect: {
+      login: '/admin'
+    },
     localStorage: false,
     strategies: {
       local: {
