@@ -13,19 +13,30 @@ controller.getUser = (req, res, next) => {
   }
 }
 
-controller.saveUser = async (req, res, next) => {
+controller.createUser = async (req, res, next) => {
   try {
     const { username, password } = req.body
     const salt = await bcrypt.genSalt(10)
     const pwd = await bcrypt.hash(password, salt)
-    const qtd = await conn().get('users').size().value()
-    if (qtd < 1) {
-      await conn().get('users').push({ id: userId, username, password: pwd }).write()
-      res.json({ message: 'Usário criado' })
-    } else {
-      await conn().get('users').find({ id: userId }).assign({ username, password: pwd }).write()
-      res.json({ message: 'Usário alterado' })
-    }
+    const user = await conn().get('users').find({ id: userId }).value()
+    if (user) throw new Error('Usuário já existe')
+    await conn().get('users').push({ id: userId, username, password: pwd }).write()
+    res.json({ message: 'Usário criado' })
+  } catch (error) {
+    next(error)
+  }
+}
+
+controller.updateUser = async (req, res, next) => {
+  try {
+    const { password, newPassword } = req.body
+    const salt = await bcrypt.genSalt(10)
+    const newPwd = await bcrypt.hash(newPassword, salt)
+    const user = await conn().get('users').find({ id: userId }).value()
+    const valid = await bcrypt.compare(password, user.password)
+    if (!valid) throw new Error('Senha atual errada')
+    await conn().get('users').find({ id: userId }).assign({ password: newPwd }).write()
+    res.json({ message: 'Senha alterada' })
   } catch (error) {
     next(error)
   }

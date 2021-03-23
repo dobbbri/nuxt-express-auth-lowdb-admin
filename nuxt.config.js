@@ -51,12 +51,6 @@ export default {
   middleware: 'auth',
 
   auth: {
-    // redirect: {
-    //   login: '/admin',
-    //   logout: '/',
-    //   callback: '/admin',
-    //   home: '/'
-    // },
     localStorage: false,
     strategies: {
       local: {

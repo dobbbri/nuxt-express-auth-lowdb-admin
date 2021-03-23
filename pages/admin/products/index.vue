@@ -23,7 +23,7 @@
 
                     <tbody class="overflow-y-auto bg-white divide-y divide-gray-300">
                       <tr v-for="product in products" :key="product.id">
-                        <td class="text-sm font-medium text-left whitespace-nowrap">
+                        <td class="text-sm font-semibold text-left underline whitespace-nowrap">
                           <nuxt-link
                             :to="{ name: 'admin-products-id', params: { id: product.id } }"
                             class="text-indigo-600 hover:text-indigo-900"
@@ -36,7 +36,8 @@
                         <td class="text-center">{{ product.unit }}</td>
                         <td class="text-center">
                           <span
-                            class="inline-flex text-xs font-semibold text-green-800 bg-green-100 rounded-full leading-5"
+                            class="inline-flex text-xs font-semibold text-green-600 rounded-full leading-5"
+                            :class="{ 'text-red-600': !product.show }"
                           >
                             {{ product.show === true ? 'Sim' : 'Não' }}
                           </span>
