@@ -45,8 +45,8 @@
           </div>
 
           <div class="sm:flex sm:flex-row-reverse">
-            <button type="button" class="btn btn-green" style="w-auto" @click="save">Incluir</button>
-            <nuxt-link class="btn btn-gray" to="/admin/products">Cancelar</nuxt-link>
+            <button type="button" class="sm:w-auto sm:ml-2 btn btn-green" @click="save">Incluir</button>
+            <nuxt-link class="mt-4 sm:mt-0 sm:w-auto btn btn-gray" to="/admin/products">Cancelar</nuxt-link>
           </div>
         </div>
       </div>

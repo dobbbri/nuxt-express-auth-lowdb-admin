@@ -15,21 +15,25 @@
           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
         </svg>
         <span class="hidden ml-3 text-xl md:block">Administração</span>
-        <span class="ml-2 text-xl md:hidden">{{ $auth.loggedIn ? 'Adm.' : 'Administração' }}</span>
+        <span class="ml-2 text-xl md:hidden">{{ loggedIn ? 'Adm.' : 'Administração' }}</span>
       </a>
-      <nav class="flex flex-wrap items-center justify-center ml-auto text-base">
-        <nuxt-link v-if="$auth.loggedIn" class="ml-4 hover:text-indigo-500" to="/admin/products">Produtos</nuxt-link>
-        <nuxt-link v-if="$auth.loggedIn" class="ml-4 hover:text-indigo-500" to="/admin/password"
-          >Alterar Senha</nuxt-link
-        >
-        <button type="button" class="btn btn-red" style="width: auto" @click="logout">Sair</button>
+      <nav class="flex flex-wrap items-center justify-center mx-auto text-base">
+        <nuxt-link v-show="loggedIn" class="ml-4 hover:text-indigo-500" to="/admin/products">Produtos</nuxt-link>
+        <nuxt-link v-show="loggedIn" class="mx-4 hover:text-indigo-500" to="/admin/password"> Alterar Senha </nuxt-link>
       </nav>
+      <button type="button" class="w-auto btn btn-red" @click="logout">Sair</button>
     </div>
   </header>
 </template>
 
 <script>
 export default {
+  computed: {
+    loggedIn() {
+      return this.$auth.loggedIn
+    }
+  },
+
   methods: {
     async logout() {
       await this.$auth.logout()
