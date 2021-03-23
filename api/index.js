@@ -4,7 +4,6 @@ const morgan = require('morgan')
 const helmet = require('helmet')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
-const jwt = require('express-jwt')
 const auth = require('./auth')
 const users = require('./users')
 const products = require('./products')
@@ -23,15 +22,6 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 
 // JWT middleware
-app.use(
-  jwt({
-    secret: 'dummy',
-    algorithms: ['sha1', 'RS256', 'HS256']
-  }).unless({
-    path: ['/api/auth/login']
-  })
-)
-
 app.use('/auth', auth)
 app.use('/users', users)
 app.use('/products', products)

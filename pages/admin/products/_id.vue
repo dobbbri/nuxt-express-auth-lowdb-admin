@@ -7,8 +7,6 @@
             Alterar/Excluir produto
           </h2>
 
-          <input id="form.id" v-model="form.id" type="hidden" />
-
           <div>
             <label for="form.name">Nome:</label>
             <input
@@ -24,11 +22,10 @@
 
           <div>
             <label for="form.amount">Valor:</label>
-            <input
+            <currency-input
               id="form.amount"
               v-model="form.amount"
-              type="text"
-              autocomplete="form.amount"
+              class="input"
               placeholder="Informe o valor do produto"
               required
             />
@@ -64,13 +61,26 @@ export default {
 
   middleware: ['auth'],
 
-  async asyncData({ params, $axios, $toast }) {
+  async asyncData({ params, $axios, $toast, $auth }) {
     return await $axios
       .$get(`/api/products/${params.id}`)
       .then((res) => {
         return { form: res }
       })
-      .catch((err) => $toast.show({ type: 'danger', classToast: 'bg-red-500', message: err.response.data.error }))
+      .catch((err) =>
+        $toast.show({ type: 'danger', classToast: 'bg-red-500', message: 'Erro: ' + err.response.data.error })
+      )
+  },
+
+  data() {
+    return {
+      form: {
+        name: '',
+        unit: 'Kilo',
+        amount: 0,
+        show: true
+      }
+    }
   },
 
   head() {
@@ -84,12 +94,12 @@ export default {
       await this.$axios
         .$put(`/api/products/${this.form.id}`, this.form)
         .then((res) => {
-          this.$toast.show({ type: 'success', title: 'Sucesso:', message: res.message })
-          this.$router.push('/admin/products')
+          this.$toast.show({ type: 'success', classToast: 'bg-green-500', message: res.message })
         })
         .catch((err) =>
-          this.$toast.show({ type: 'danger', classToast: 'bg-red-500', message: err.response.data.error })
+          this.$toast.show({ type: 'danger', classToast: 'bg-red-500', message: 'Erro: ' + err.response.data.error })
         )
+        .finally(this.$router.push('/admin/products'))
     },
 
     confirm() {
@@ -106,11 +116,11 @@ export default {
       await this.$axios
         .$delete(`api/products/${this.form.id}`)
         .then((res) => {
-          this.$toast.show({ type: 'success', title: 'Sucesso:', message: res.message })
+          this.$toast.show({ type: 'success', classToast: 'bg-green-500', message: res.message })
           this.$router.push('/admin/products')
         })
         .catch((err) =>
-          this.$toast.show({ type: 'danger', classToast: 'bg-red-500', message: err.response.data.error })
+          this.$toast.show({ type: 'danger', classToast: 'bg-red-500', message: 'Erro: ' + err.response.data.error })
         )
     }
   }

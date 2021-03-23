@@ -25,7 +25,8 @@ controller.getProduct = async (req, res, next) => {
 controller.createProduct = async (req, res, next) => {
   try {
     const { show, name, unit, amount } = req.body
-    const newProduct = { id: nanoid(), show, name, unit, amount: parseFloat(amount.replace(',', '.')) }
+    const newProduct = { id: nanoid(), show, name, unit, amount }
+    console.log('---> ', newProduct)
     await conn().get('products').push(newProduct).write()
     res.status(200).json({ message: 'Produto criado' })
   } catch (error) {
@@ -37,8 +38,7 @@ controller.updateProduct = async (req, res, next) => {
   try {
     const { id } = req.params
     const { show, name, unit, amount } = req.body
-    const value = parseFloat(amount).toFixed(2)
-    await conn().get('products').find({ id }).assign({ show, name, unit, amount: value }).write()
+    await conn().get('products').find({ id }).assign({ show, name, unit, amount }).write()
     res.json({ message: 'Produto alterado' })
   } catch (error) {
     next(error)

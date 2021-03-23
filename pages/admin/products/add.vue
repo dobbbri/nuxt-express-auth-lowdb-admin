@@ -22,11 +22,10 @@
 
           <div>
             <label for="form.amount">Valor:</label>
-            <input
+            <currency-input
               id="form.amount"
               v-model="form.amount"
-              type="text"
-              autocomplete="form.amount"
+              class="input"
               placeholder="Informe o valor do produto"
               required
             />
@@ -81,18 +80,13 @@ export default {
   methods: {
     async save() {
       await this.$axios
-        .$post('api/products/', { data: this.form })
+        .$post('api/products/', this.form)
         .then((res) => {
           this.$toast.show({ type: 'success', classToast: 'bg-green-500', message: res.message })
           this.$router.push('/admin/products')
         })
         .catch((err) =>
-          this.$toast.show({
-            type: 'danger',
-            classToast: 'bg-red-500',
-            timeout: false,
-            message: err.response.data.error || err.toString()
-          })
+          this.$toast.show({ type: 'danger', classToast: 'bg-red-500', message: 'Erro: ' + err.response.data.error })
         )
     }
   }

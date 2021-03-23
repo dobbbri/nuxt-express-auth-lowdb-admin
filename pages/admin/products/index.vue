@@ -63,19 +63,14 @@ export default {
 
   middleware: ['auth'],
 
-  async asyncData({ $axios, $toast }) {
+  async asyncData({ $axios, $toast, $auth }) {
     return await $axios
       .$get('/api/products')
       .then((res) => {
         return { products: res }
       })
       .catch((err) =>
-        $toast.show({
-          type: 'danger',
-          classToast: 'bg-red-500',
-          timeout: false,
-          message: err.response.data.error || err.toString()
-        })
+        $toast.show({ type: 'danger', classToast: 'bg-red-500', message: 'Erro: ' + err.response.data.error })
       )
   },
 

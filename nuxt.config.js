@@ -28,6 +28,10 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
     [
+      'vue-currency-input/nuxt',
+      { globalOptions: { currency: null, precision: 2, autoDecimalMode: true, allowNegative: false } }
+    ],
+    [
       'nuxt-tailvue',
       {
         all: true,
@@ -47,23 +51,33 @@ export default {
   middleware: 'auth',
 
   auth: {
-    redirect: {
-      login: '/admin',
-      logout: '/',
-      home: '/admin/products'
-    },
+    // redirect: {
+    //   login: '/admin',
+    //   logout: '/',
+    //   callback: '/admin',
+    //   home: '/'
+    // },
+    localStorage: false,
     strategies: {
       local: {
+        scheme: 'refresh',
         token: {
-          property: 'token.accessToken'
+          property: 'token.accessToken',
+          type: 'Bearer',
+          required: true
+        },
+        refreshToken: {
+          property: 'token.refreshToken'
         },
         user: {
-          property: false
+          property: false,
+          autoFetch: true
         },
         endpoints: {
           login: { url: '/api/auth/login', method: 'post' },
+          refresh: { url: '/api/auth/refresh', method: 'post' },
           user: { url: '/api/users', method: 'get' },
-          logout: { url: '/api/auth/logout', method: 'get' }
+          logout: false
         }
       }
     }

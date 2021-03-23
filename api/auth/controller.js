@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt')
 const { conn } = require('../db')
 const controller = {}
 const refreshTokens = {}
+const expiresIn = 15
 
 controller.login = async (req, res, next) => {
   try {
@@ -11,7 +12,6 @@ controller.login = async (req, res, next) => {
     if (!user) throw new Error('Usuário ou senha inválida')
     const valid = await bcrypt.compare(password, user.password)
     if (!valid) throw new Error('Usuário ou senha inválida')
-    const expiresIn = 15
     const refreshToken = Math.floor(Math.random() * (1000000000000000 - 1 + 1)) + 1
     const accessToken = jsonwebtoken.sign(
       {
@@ -36,7 +36,34 @@ controller.login = async (req, res, next) => {
     res.json({ token: { accessToken, refreshToken } })
   } catch (e) {
     next(e)
-    // res.status(500).json({ message: e.message })
+  }
+}
+
+controller.refresh = (req, res, next) => {
+  try {
+    const refreshToken = req.body.refresh_token
+
+    if (refreshToken in refreshTokens) {
+      const user = refreshTokens[refreshToken].user
+      const newRefreshToken = Math.floor(Math.random() * (1000000000000000 - 1 + 1)) + 1
+      delete refreshTokens[refreshToken]
+      const accessToken = jsonwebtoken.sign(
+        {
+          user: user.username,
+          picture: 'https://github.com/nuxt.png',
+          name: 'User ' + user.username,
+          scope: ['test', 'user']
+        },
+        'dummy',
+        { expiresIn }
+      )
+      refreshTokens[newRefreshToken] = { accessToken, user }
+      res.json({ token: { accessToken, refreshToken: newRefreshToken } })
+    } else {
+      throw new Error('Token não encontrado')
+    }
+  } catch (e) {
+    next(e)
   }
 }
 

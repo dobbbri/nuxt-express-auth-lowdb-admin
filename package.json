@@ -28,14 +28,14 @@
     "core-js": "^3.6.5",
     "cors": "^2.8.5",
     "express": "latest",
-    "express-jwt": "^6.0.0",
     "helmet": "^4.4.1",
     "jsonwebtoken": "^8.5.1",
     "lowdb": "^1.0.0",
     "morgan": "^1.10.0",
     "nanoid": "^3.1.22",
     "nuxt": "latest",
-    "nuxt-tailvue": "^1.0.68"
+    "nuxt-tailvue": "^1.0.68",
+    "vue-currency-input": "^1.22.6"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",
