@@ -7,7 +7,7 @@
       <h2 class="info">
         {{ error.message }}
       </h2>
-      <nuxt-link v-if="error.statusCode === 404" class="button" to="/"> Homepage </nuxt-link>
+      <nuxt-link v-if="error.statusCode === 404" class="button" to="/"> Voltar pro início </nuxt-link>
     </div>
   </section>
 </template>
