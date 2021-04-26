@@ -14,9 +14,6 @@ module.exports = {
       current: 'currentColor',
       black: '#000',
       white: '#fff',
-      primary: {
-        500: '#e53e3e'
-      },
       indigo: {
         500: '#6366f1',
         600: '#4f46e5',
@@ -26,6 +23,11 @@ module.exports = {
         500: '#22c55e',
         600: '#16a34a',
         700: '#15803d'
+      },
+      yellow: {
+        500: '#eab308',
+        600: '#ca8a04',
+        700: '#a16207'
       },
       red: {
         500: '#ef4444',

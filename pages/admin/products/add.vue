@@ -79,6 +79,7 @@ export default {
 
   methods: {
     async save() {
+      this.$nuxt.$loading.start()
       await this.$axios
         .$post('api/products/', this.form)
         .then((res) => {
@@ -88,6 +89,7 @@ export default {
         .catch((err) =>
           this.$toast.show({ type: 'danger', classToast: 'bg-red-500', message: 'Erro: ' + err.response.data.error })
         )
+        .finally(() => this.$nuxt.$loading.finish())
     }
   }
 }

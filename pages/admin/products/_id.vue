@@ -91,6 +91,7 @@ export default {
 
   methods: {
     async save() {
+      this.$nuxt.$loading.start()
       await this.$axios
         .$put(`/api/products/${this.form.id}`, this.form)
         .then((res) => {
@@ -99,7 +100,10 @@ export default {
         .catch((err) =>
           this.$toast.show({ type: 'danger', classToast: 'bg-red-500', message: 'Erro: ' + err.response.data.error })
         )
-        .finally(this.$router.push('/admin/products'))
+        .finally(() => {
+          this.$nuxt.$loading.finish()
+          this.$router.push('/admin/products')
+        })
     },
 
     confirm() {
@@ -113,6 +117,7 @@ export default {
     },
 
     async remove() {
+      this.$nuxt.$loading.start()
       await this.$axios
         .$delete(`api/products/${this.form.id}`)
         .then((res) => {
@@ -122,6 +127,7 @@ export default {
         .catch((err) =>
           this.$toast.show({ type: 'danger', classToast: 'bg-red-500', message: 'Erro: ' + err.response.data.error })
         )
+        .finally(() => this.$nuxt.$loading.finish())
     }
   }
 }
