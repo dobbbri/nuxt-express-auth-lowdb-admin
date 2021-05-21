@@ -38,7 +38,7 @@ export default {
         toast: {
           defaultProps: {
             timeout: 10,
-            classTitle: 'text-white opacity-75',
+            classTitle: 'text-white w-auto opacity-75',
             classMessage: 'text-white',
             classClose: 'text-gray-900',
             classTimeout: 'bg-white opacity-50'
